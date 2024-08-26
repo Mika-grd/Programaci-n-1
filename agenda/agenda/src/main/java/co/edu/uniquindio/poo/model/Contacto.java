@@ -7,7 +7,7 @@ public class Contacto {
     private String telefono;
     private String email;
 
-    //constructor
+    //constructor prueba
     public Contacto(String nombres, String alias, String direccion, String telefono, String email){
         this.nombres = nombres;
         this.alias = alias;
