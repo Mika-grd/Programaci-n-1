@@ -20,7 +20,46 @@ public class Reunion {
         
     }
 
-    
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Time getHora() {
+        return hora;
+    }
+
+    public void setHora(Time hora) {
+        this.hora = hora;
+    }
+
+    public Contacto[] getListaContactosAsistentes() {
+        return listaContactosAsistentes;
+    }
+
+    public void setListaContactosAsistentes(Contacto[] listaContactosAsistentes) {
+        this.listaContactosAsistentes = listaContactosAsistentes;
+    }
+
+    public int getNumeroContactosAsistentes() {
+        return numeroContactosAsistentes;
+    }
+
+    public void setNumeroContactosAsistentes(int numeroContactosAsistentes) {
+        this.numeroContactosAsistentes = numeroContactosAsistentes;
+    }
 
     @Override
     public int hashCode() {
@@ -65,48 +104,6 @@ public class Reunion {
         if (numeroContactosAsistentes != other.numeroContactosAsistentes)
             return false;
         return true;
-    }
-
-
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public Time getHora() {
-        return hora;
-    }
-
-    public void setHora(Time hora) {
-        this.hora = hora;
-    }
-
-    public Contacto[] getListaContactosAsistentes() {
-        return listaContactosAsistentes;
-    }
-
-    public void setListaContactosAsistentes(Contacto[] listaContactosAsistentes) {
-        this.listaContactosAsistentes = listaContactosAsistentes;
-    }
-
-    public int getNumeroContactosAsistentes() {
-        return numeroContactosAsistentes;
-    }
-
-    public void setNumeroContactosAsistentes(int numeroContactosAsistentes) {
-        this.numeroContactosAsistentes = numeroContactosAsistentes;
     }
 
 

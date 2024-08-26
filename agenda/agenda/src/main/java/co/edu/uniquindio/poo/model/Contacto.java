@@ -7,7 +7,7 @@ public class Contacto {
     private String telefono;
     private String email;
 
-    //constructor prueba
+    //constructor
     public Contacto(String nombres, String alias, String direccion, String telefono, String email){
         this.nombres = nombres;
         this.alias = alias;
@@ -15,73 +15,8 @@ public class Contacto {
         this.telefono = telefono;
         this.email = email;
     }
+
     
-    
-    
-
-    @Override
-    public String toString() {
-        return "Contacto [nombres=" + nombres + ", alias=" + alias + ", direccion=" + direccion + ", telefono="
-                + telefono + ", email=" + email + "]";
-    }
-
-
-
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((nombres == null) ? 0 : nombres.hashCode());
-        result = prime * result + ((alias == null) ? 0 : alias.hashCode());
-        result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
-        result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
-        return result;
-    }
-
-
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Contacto other = (Contacto) obj;
-        if (nombres == null) {
-            if (other.nombres != null)
-                return false;
-        } else if (!nombres.equals(other.nombres))
-            return false;
-        if (alias == null) {
-            if (other.alias != null)
-                return false;
-        } else if (!alias.equals(other.alias))
-            return false;
-        if (direccion == null) {
-            if (other.direccion != null)
-                return false;
-        } else if (!direccion.equals(other.direccion))
-            return false;
-        if (telefono == null) {
-            if (other.telefono != null)
-                return false;
-        } else if (!telefono.equals(other.telefono))
-            return false;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
-            return false;
-        return true;
-    }
-
-
-
 
     public String getNombres() {
         return nombres;
@@ -123,6 +58,62 @@ public class Contacto {
         this.email = email;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Contacto [nombres=" + nombres + ", alias=" + alias + ", direccion=" + direccion + ", telefono="
+                + telefono + ", email=" + email + "]";
+    }
+
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((nombres == null) ? 0 : nombres.hashCode());
+        result = prime * result + ((alias == null) ? 0 : alias.hashCode());
+        result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
+        result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
+        result = prime * result + ((email == null) ? 0 : email.hashCode());
+        return result;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Contacto other = (Contacto) obj;
+        if (nombres == null) {
+            if (other.nombres != null)
+                return false;
+        } else if (!nombres.equals(other.nombres))
+            return false;
+        if (alias == null) {
+            if (other.alias != null)
+                return false;
+        } else if (!alias.equals(other.alias))
+            return false;
+        if (direccion == null) {
+            if (other.direccion != null)
+                return false;
+        } else if (!direccion.equals(other.direccion))
+            return false;
+        if (telefono == null) {
+            if (other.telefono != null)
+                return false;
+        } else if (!telefono.equals(other.telefono))
+            return false;
+        if (email == null) {
+            if (other.email != null)
+                return false;
+        } else if (!email.equals(other.email))
+            return false;
+        return true;
+    }
+
 
 }

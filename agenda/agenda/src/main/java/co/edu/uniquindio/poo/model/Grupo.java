@@ -24,7 +24,20 @@ public class Grupo {
 
     
     public boolean añadirContacto(Contacto contacto){
-        if ()
+        //verificar si el contacto ya tiene 5 contactos
+        if (listaContactosPertenecientes.size()>=5){
+            System.out.println("No se pueden añadir mas de 5 contactos a un grupo");
+            return false;
+        }
+        //verificar si el contacto ya esta en el grupo
+        if (listaContactosPertenecientes.contains(contacto)){
+            System.out.println("El contacto ya esta en el grupo.");
+            return false;
+        }
+        //añadir el contacto a la lista
+        listaContactosPertenecientes.add(contacto);
+        System.out.println("contacto añadido con éxito.");
+        return true;
     }
 
     
