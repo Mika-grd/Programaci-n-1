@@ -15,11 +15,6 @@ public class Contacto {
         this.telefono = telefono;
         this.email = email;
     }
-    
-    
-    
-
-    
 
     public String getNombres() {
         return nombres;
@@ -73,13 +68,9 @@ public class Contacto {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((nombres == null) ? 0 : nombres.hashCode());
-        result = prime * result + ((alias == null) ? 0 : alias.hashCode());
-        result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
         result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
         return result;
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -95,27 +86,14 @@ public class Contacto {
                 return false;
         } else if (!nombres.equals(other.nombres))
             return false;
-        if (alias == null) {
-            if (other.alias != null)
-                return false;
-        } else if (!alias.equals(other.alias))
-            return false;
-        if (direccion == null) {
-            if (other.direccion != null)
-                return false;
-        } else if (!direccion.equals(other.direccion))
-            return false;
         if (telefono == null) {
             if (other.telefono != null)
                 return false;
         } else if (!telefono.equals(other.telefono))
             return false;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
-            return false;
         return true;
     }
 
+
 }
+

@@ -4,13 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Grupo {
-    //crear enumeración
-    public enum Categoria{
-        OFICINA,
-        FIESTA,
-        AMIGOS,
-        FAMILIA
-    }
     private String nombre;
     private Categoria categoria;
     private List <Contacto> listaContactosPertenecientes;
@@ -19,25 +12,34 @@ public class Grupo {
     public Grupo(String nombre, Categoria categoria){
         this.nombre=nombre;
         this.categoria=categoria;
-        this.listaContactosPertenecientes = new ArrayList<>(5); //lista con capacidad para 5 contactos
+        this.listaContactosPertenecientes = new ArrayList<>(); 
     }
 
-    
-    public boolean añadirContacto(Contacto contacto){
-        //verificar si el contacto ya tiene 5 contactos
+    public String añadirContactoGrupo(Contacto contacto){
+        //verificar si el grupo ya tiene 5 contactos
+        String mensaje = "";
         if (listaContactosPertenecientes.size()>=5){
-            System.out.println("No se pueden añadir mas de 5 contactos a un grupo");
-            return false;
+            mensaje = "No se pueden añadir mas de 5 contactos a un grupo";
         }
         //verificar si el contacto ya esta en el grupo
         if (listaContactosPertenecientes.contains(contacto)){
-            System.out.println("El contacto ya esta en el grupo.");
-            return false;
+            mensaje = "El contacto ya esta en el grupo.";
         }
         //añadir el contacto a la lista
         listaContactosPertenecientes.add(contacto);
-        System.out.println("contacto añadido con éxito.");
-        return true;
+        mensaje = "contacto añadido con éxito.";
+        return mensaje;
+    }
+
+    public String eliminarContactoGrupo(Contacto contacto){
+        String mensaje ="Contacto no encontrado";
+        for (Contacto contactoaux : listaContactosPertenecientes){
+            if (contactoaux == contacto){
+                listaContactosPertenecientes.remove(contacto);
+                mensaje = "Contacto eliminado exitosamente";
+            }
+        }
+        return mensaje;
     }
 
     
@@ -66,6 +68,9 @@ public class Grupo {
     public void setListaContactosPertenecientes(List<Contacto> listaContactosPertenecientes) {
         this.listaContactosPertenecientes = listaContactosPertenecientes;
     }
+
+
+
 
     @Override
     public int hashCode() {
