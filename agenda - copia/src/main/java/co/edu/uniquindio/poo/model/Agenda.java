@@ -35,17 +35,7 @@ public class Agenda {
         String telefono = null;
         String email  = null;
         int edad = 0;
-        while (bandera){
-        nombres = JOptionPane.showInputDialog("Ingrese el nombre del contacto");
-        // Validar si el input es null (cuando el usuario cancela) o si está vacío
-        if (nombres == null || nombres.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "El campo no puede estar vacío o ser cancelado.");
-            
-        }else {
-            break;
-        }
-
-        }
+        nombres = strNotNull(nombres);
 
         while (bandera){
             alias = JOptionPane.showInputDialog("Ingrese el alias del contacto");
@@ -91,14 +81,7 @@ public class Agenda {
             }
         }
          
-        while (bandera) {
-            try {
-                edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del contacto"));
-                bandera = false;
-            } catch (NumberFormatException nfe){
-                JOptionPane.showMessageDialog(null, "La edad tiene que ser un numero");
-        }
-    }
+        edad = verifInt(edad);
             
         Contacto contacto = new Contacto(nombres, alias, direccion, telefono, email, edad);
 
@@ -732,6 +715,7 @@ public class Agenda {
 
     }
 
+    double p = Math.random()*60;
     /**
      * 13. Ordenar contactos segun la edad con ordenamiento burbuja
      */
@@ -924,6 +908,33 @@ public class Agenda {
                     break;
             }
         }
+    }
+
+    public String strNotNull(String str){
+
+        while (true){
+            str = JOptionPane.showInputDialog("Ingrese el nombre del contacto");
+            // Validar si el input es null (cuando el usuario cancela) o si está vacío
+            if (str == null || str.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "El campo no puede estar vacío o ser cancelado.");
+                
+            }else {
+                return str;
+                
+            }
+    
+            }
+    }
+
+    public int verifInt(int n){
+        while (true) {
+            try {
+                n = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del contacto"));
+                return n;
+            } catch (NumberFormatException nfe){
+                JOptionPane.showMessageDialog(null, "La edad tiene que ser un numero");
+        }
+    }
     }
 
     public void menuReuniones() {
